@@ -15,18 +15,21 @@ def start_google_search ():
 	saveInFile = "--save" in sys.argv
 	# Logo
 	print(Fore.YELLOW + '''
-	  █▀▄▀█ █▀▀█ █▀▀▀ █▀▄▀█ █▀▀█   █▀▀█ █▀▀ ░▀░ █▀▀▄ ▀▀█▀▀
-	  █░▀░█ █▄▄█ █░▀█ █░▀░█ █▄▄█   █░░█ ▀▀█ ▀█▀ █░░█ ░░█░░
-	  ▀░░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀   ▀▀▀▀ ▀▀▀ ▀▀▀ ▀░░▀ ░░▀░░
+	  █▀▄▀█ █▀▀█ █▀▀▀ █▀▄▀█ █▀▀█   █▀▀█ █▀▀ ░▀░ █▀▀▄ ▀▀█▀▀  
+	  █░▀░█ █▄▄█ █░▀█ █░▀░█ █▄▄█   █░░█ ▀▀█ ▀█▀ █░░█ ░░█░░   
+	  ▀░░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀   ▀▀▀▀ ▀▀▀ ▀▀▀ ▀░░▀ ░░▀░░	 
 	                                   Created by LimerBoy
 	''' +Fore.WHITE+"                            some modded by m1n64")
 	print(Fore.CYAN+'''
 	add --save how argument in console to save finded links in text file. File will be located in osint.py directory. Example: 
 	'''+Fore.MAGENTA+"python3 osint.py --save")
+	
 	InResults = input(Back.BLACK + Fore.YELLOW + 'Results > ' + Back.RESET + Fore.WHITE)
 	query   = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
+
 	results = int(InResults)
 	print(Fore.GREEN + '[~] Searching ' + query)
+
 	for url in search(query, stop = results):
 		print('\n' + Fore.YELLOW + '[+] Url detected: ' + url)
 		if saveInFile:
