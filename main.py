@@ -11,9 +11,9 @@ Chrome (web)      • chrome  • web-javascript • Google Chrome 105.0.5195.12
     add --save how argument in console to save finded links in text file. File will be located in osint.py directory. Example: 
 '''+Fore.MAGENTA+"       python3 osint.py --save\r\n")
 print (Fore.WHITE + '[1]: google search (google)')
-print (Fore.WHITE + '[2]: deap search (tor)\r\n')
+print (Fore.WHITE + '[2]: deep search (tor)\r\n')
 Qmode = input(Fore.GREEN + 'Please choose one (To quit, press "Enter") ')
 if Qmode == '1':
     start_google_search()
 if Qmode == '2' :
-    start_Tor_search
+    start_Tor_search()

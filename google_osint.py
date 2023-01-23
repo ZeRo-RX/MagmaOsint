@@ -11,8 +11,6 @@ import sys
 
 # colorama
 def start_google_search ():
-
-
 	init(autoreset=True)
 	saveInFile = "--save" in sys.argv
 	# Logo
@@ -25,11 +23,12 @@ def start_google_search ():
 	print(Fore.CYAN+'''
 	add --save how argument in console to save finded links in text file. File will be located in osint.py directory. Example: 
 	'''+Fore.MAGENTA+"python3 osint.py --save")
+	InResults = input(Back.BLACK + Fore.YELLOW + 'Results > ' + Back.RESET + Fore.WHITE)
 	query   = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
-	results = 100
+	results = int(InResults)
 	print(Fore.GREEN + '[~] Searching ' + query)
 	for url in search(query, stop = results):
-		print('\n' + Fore.CYAN + '[+] Url detected: ' + url)
+		print('\n' + Fore.YELLOW + '[+] Url detected: ' + url)
 		if saveInFile:
 			with open(query + ".txt", "a") as file:
 				file.write(url + "\n")
