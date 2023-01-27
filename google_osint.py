@@ -26,14 +26,17 @@ def start_google_search ():
 	
 	InResults = input(Back.BLACK + Fore.YELLOW + 'Results > ' + Back.RESET + Fore.WHITE)
 	query   = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
+	if saveInFile : 
+		NameFile = input(Back.BLACK + Fore.YELLOW + 'Save file > ' + Back.RESET + Fore.WHITE)
 
 	results = int(InResults)
+
 	print(Fore.GREEN + '[~] Searching ' + query)
 
 	for url in search(query, stop = results):
 		print('\n' + Fore.YELLOW + '[+] Url detected: ' + url)
 		if saveInFile:
-			with open(query + ".txt", "a") as file:
+			with open(NameFile + ".txt", "a") as file:
 				file.write(url + "\n")
 		try:
 			text = get(url, timeout = 1).text
