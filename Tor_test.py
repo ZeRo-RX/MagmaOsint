@@ -1,15 +1,12 @@
-import requests
+from ast import Or
+from requests_tor import RequestsTor
 
-from multiprocessing.pool import ThreadPool
-from torpy.http.requests import tor_requests_session
+# If you use the Tor browser
+rt = RequestsTor()
+Or
+# If you use the Tor
+rt = RequestsTor(tor_ports=(9050,), tor_cport=9050)
 
-session = requests.session()
-session.proxies = {}
-session.proxies['http'] = 'socks5h://localhost:9050'
-session.proxies['https'] = 'socks5h://localhost:9050'
-
-with tor_requests_session() as s:  # returns requests.Session() object
-    links = ['http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion', 'https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/'] * 2
-
-    with ThreadPool(3) as pool:
-        pool.map(s.get, links)
+url = ['http://juhanurmihxlp77nkq76byazcldy2hlmovfu2epvl5ankdibsot4csyd.onion']
+r = rt.get_urls(url)
+print(r[-1].text)

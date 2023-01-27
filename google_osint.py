@@ -22,7 +22,7 @@ def start_google_search ():
 	''' +Fore.WHITE+"                            some modded by m1n64")
 	print(Fore.CYAN+'''
 	add --save how argument in console to save finded links in text file. File will be located in osint.py directory. Example: 
-	'''+Fore.MAGENTA+"python3 osint.py --save")
+	'''+Fore.MAGENTA+"python3 osint.py --save\r\n")
 	
 	InResults = input(Back.BLACK + Fore.YELLOW + 'Results > ' + Back.RESET + Fore.WHITE)
 	query   = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
