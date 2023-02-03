@@ -25,7 +25,7 @@ def start_google_search ():
 	'''+Fore.MAGENTA+"python3 osint.py --save\r\n")
 	
 	InResults = input(Back.BLACK + Fore.YELLOW + 'Results > ' + Back.RESET + Fore.WHITE)
-	query   = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
+	query = input(Back.BLACK + Fore.YELLOW + 'Find > ' + Back.RESET + Fore.WHITE)
 	if saveInFile : 
 		NameFile = input(Back.BLACK + Fore.YELLOW + 'Save file > ' + Back.RESET + Fore.WHITE)
 
@@ -34,7 +34,7 @@ def start_google_search ():
 	print(Fore.GREEN + '[~] Searching ' + query)
 
 	for url in search(query, stop = results):
-		print('\n' + Fore.YELLOW + '[+] Url detected: ' + url)
+		print('\n' + Fore.YELLOW + '[+] Url : ' + url)
 		if saveInFile:
 			with open(NameFile + ".txt", "a") as file:
 				file.write(url + "\n")
